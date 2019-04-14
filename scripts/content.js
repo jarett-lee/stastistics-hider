@@ -16,14 +16,21 @@ function clear() {
   var viewCounter = viewCounters[0];
   myhide(viewCounter);
 
-  var topLevelButtons = document.getElementById('top-level-buttons');
-  var likeText = topLevelButtons.children[0].children[0].children[1];
-  myhide(likeText);
-  var dislikeText = topLevelButtons.children[1].children[0].children[1];
-  myhide(dislikeText);
+  try {
+    var topLevelButtons = document.getElementById('top-level-buttons');
+    var likeText = topLevelButtons.children[0].children[0].children[1];
+    myhide(likeText);
+  } catch (e) {}
+  try {
+    var dislikeText = topLevelButtons.children[1].children[0].children[1];
+    myhide(dislikeText);
+  } catch (e) {}
 
   var sentiment = document.getElementById('sentiment');
   myhide(sentiment);
+
+  var subscriberCount = document.getElementById('subscriber-count');
+  myhide(subscriberCount);
 }
 
 function clearSafe() {
@@ -38,6 +45,13 @@ function clearSafe() {
 }
 
 function clearMetaBlocks() {
+  var subscribeButtons = document.querySelectorAll('yt-formatted-string.ytd-subscribe-button-renderer');
+  var subscribeButton = subscribeButtons[0];
+  if (subscribeButton) {
+    var subscribeNumber = subscribeButton.children[0]
+    myhide(subscribeNumber);
+  }
+
   var metaBlocks = document.querySelectorAll('.ytd-video-meta-block:not(.stat-hider-clean)');
   for (var i = 0; i < metaBlocks.length; i++) {
     var metaBlock = metaBlocks[i];
