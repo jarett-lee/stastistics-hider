@@ -5,6 +5,15 @@ function myhide(element) {
   }
 }
 
+function myhideAll(elements) {
+  for (var i = 0; i < elements.length; i++) {
+    var element = elements[i];
+    if (element) {
+      myhide(element);
+    }
+  }
+}
+
 function myremove(element) {
   if (element) {
     element.parentNode.removeChild(element);
@@ -17,14 +26,19 @@ function clear() {
   myhide(viewCounter);
 
   try {
-    var topLevelButtons = document.getElementById('top-level-buttons');
-    var likeText = topLevelButtons.children[0].children[0].children[1];
-    myhide(likeText);
+    myhideAll(document.querySelectorAll('span.yt-view-count-renderer'))
   } catch (e) {}
-  try {
-    var dislikeText = topLevelButtons.children[1].children[0].children[1];
-    myhide(dislikeText);
-  } catch (e) {}
+
+  var topLevelButtons = document.querySelectorAll('#top-level-buttons');
+  for (var i = 0; i < topLevelButtons.length; i++) {
+    try {
+      var topLevelButton = topLevelButtons[i];
+      var likeText = topLevelButton.children[0].children[0].children[1];
+      myhide(likeText);
+      var dislikeText = topLevelButton.children[1].children[0].children[1];
+      myhide(dislikeText);
+    } catch (e) {}
+  }
 
   var sentiment = document.getElementById('sentiment');
   myhide(sentiment);
