@@ -1,0 +1,17 @@
+{
+  "name": "Statistics Hider",
+  "version": "1.0.0.0",
+  "description": "Hide statistics on social media websites.",
+  "permissions": [],
+  "content_scripts": [{
+    "js": ["scripts/content.js"],
+    "matches": ["https://www.youtube.com/*"]
+  }],
+  "icons": {
+    "16": "images/icon-16x16.png",
+    "32": "images/icon-48x48.png",
+    "48": "images/icon-48x48.png",
+    "128": "images/icon-128x128.png"
+  },
+  "manifest_version": 2
+}
