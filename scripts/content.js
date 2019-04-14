@@ -55,7 +55,7 @@ function clearMetaBlocks() {
   var metaBlocks = document.querySelectorAll('.ytd-video-meta-block:not(.stat-hider-clean)');
   for (var i = 0; i < metaBlocks.length; i++) {
     var metaBlock = metaBlocks[i];
-    if (/.*views?$/.exec(metaBlock.innerText)) {
+    if (/^[0-9]+.*views?$/.exec(metaBlock.innerText)) {
       myhide(metaBlock);
     } else if (metaBlock.innerText == '') {
     } else {
