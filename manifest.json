@@ -5,8 +5,12 @@
   "permissions": [],
   "content_scripts": [
     {
-      "css": ["css/content.css"],
+      "css": ["css/youtube.css"],
       "matches": ["https://www.youtube.com/*"]
+    },
+    {
+      "css": ["css/twitch.css"],
+      "matches": ["https://www.twitch.tv/*"]
     }
   ],
   "icons": {
