@@ -1,0 +1,12 @@
+#sentiment, #subscriber-count, #creator-heart, span#vote-count-middle.ytd-comment-action-buttons-renderer, span#vote-count-left.ytd-comment-action-buttons-renderer, .view-count, .short-view-count, span.yt-view-count-renderer, yt-formatted-string.ytd-subscribe-button-renderer :first-child, h2#count.ytd-comments-header-renderer {
+  display: none;
+}
+
+#top-level-buttons :nth-child(1) :nth-child(1) :nth-child(2), #top-level-buttons :nth-child(2) :nth-child(1) :nth-child(2) {
+  display: none;
+}
+
+/* #metadata-line.ytd-video-meta-block span.ytd-video-meta-block */
+span.ytd-video-meta-block, div#metadata-line.ytd-grid-video-renderer :first-child {
+  display: none !important;
+}
