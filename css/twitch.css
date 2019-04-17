@@ -1,3 +1,7 @@
 span.tw-stat__value:not(.ffz-stat-text), .tw-absolute.tw-bottom-0.tw-left-0:not(.tw-flex):not(.whispers):not(.featured-content-carousel-featured-item__logo-image-container):not(.featured-content-carousel-featured-item__overlay):not([data-test-selector='featured-item-video']):not(.player-overlay):not([data-target='persistent-player-content']), .tw-c-text-alt-2.tw-ellipsis, div[data-test-selector='pinned-cheers-container'] {
   display: none;
 }
+
+div.online-side-nav-channel-tooltip__body>div.tw-flex {
+  display: none !important;
+}
